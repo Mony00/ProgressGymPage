@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 function StartPage() {
   const [animation, setAnimation] = useState("collapse");
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
 
   //animation at pagerender
   useEffect(function () {
@@ -18,39 +18,41 @@ function StartPage() {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  //animation when scrolled
   useEffect(
     function () {
       const handleScroll = () => {
-        if (window.scrollY > 70) {
-          setIsScrolled(true);
+        if (window.scrollY > 600) {
+          setShowLogo(true);
         } else {
-          setIsScrolled(false);
+          setShowLogo(false);
         }
       };
 
       window.addEventListener("scroll", handleScroll);
 
-      return () => window.removeEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     },
-    [isScrolled]
+    [showLogo]
   );
 
   return (
     <>
       <div className={styles["img-container"]}>
         <img
-          className={`${styles["start-img"]} ${styles[animation]} ${
-            isScrolled ? styles.shrink : ""
-          }`}
+          className={`${styles["start-img"]} ${styles[animation]}`}
           src="pictures\progress gym.png"
           alt="Logo"
         />
       </div>
-      <div
-        className={styles["img-container"]}
-        style={{ height: "20000px", backgroundColor: "yellow" }}
-      ></div>
+      {showLogo && (
+        <img
+          className={styles["shrinked-img"]}
+          src="pictures\progress gym.png"
+          alt="mini-Logo"
+        />
+      )}
     </>
   );
 }

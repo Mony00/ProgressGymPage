@@ -1,0 +1,12 @@
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-container {
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+.swiper-zoom-container {
+  height: 300px;
+}
