@@ -1,4 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useZoom } from "../context/Context";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 import {
   Keyboard,
@@ -24,16 +27,18 @@ import slide_image_4 from "../assets/RF_05-10_7759.jpg";
 import slide_image_5 from "../assets/RF_05-10_7798.jpg";
 import slide_image_6 from "../assets/VAB_02-10_3328.jpg";
 import slide_image_7 from "../assets/VAB_02-10_3355.jpg";
-import { useState } from "react";
+
+const images = [
+  slide_image_2,
+  slide_image_3,
+  slide_image_4,
+  slide_image_5,
+  slide_image_6,
+  slide_image_7,
+];
 
 function ImageSlider() {
-  const [containerHeight, setContainerHeight] = useState("auto");
-
-  function handleDoubleClick() {
-    setContainerHeight((prevheight) =>
-      prevheight === "auto" ? "600px" : "auto"
-    );
-  }
+  const { handleZoom, windowWidth } = useZoom();
 
   return (
     <div className={styles["swiper-container"]}>
@@ -42,17 +47,17 @@ function ImageSlider() {
           enabled: true,
           onlyInViewport: true,
         }}
-        zoom={true}
+        zoom={false}
         slidesPerView={1}
         spaceBetween={10}
         grabCursor={true}
         loop={true}
         onSlideChange={() => {
-          setContainerHeight("auto");
+          // setContainerHeight("auto");
           // console.log("slide changed");
         }}
         onSwiper={() => {
-          setContainerHeight("auto");
+          // setContainerHeight("auto");
           console.log("slide changed");
         }}
         effect="coverflow"
@@ -73,102 +78,29 @@ function ImageSlider() {
         modules={[EffectCoverflow, Keyboard, Navigation, Pagination, Zoom]}
         // Responsive breakpoints
         breakpoints={{
-          // // when window width is >= 320px
-          // 420: {
-          //   slidesPerView: 2,
-          //   spaceBetween: 20,
-          // },
-          // when window width is >= 480px
           940: {
             slidesPerView: 3,
             spaceBetween: 30,
           },
         }}
       >
-        <SwiperSlide>
-          <div
-            className="swiper-zoom-container"
-            style={{ height: containerHeight }}
-            onDoubleClick={handleDoubleClick}
+        {images.map((image, index) => (
+          <SwiperSlide
+            key={index}
+            data-tooltip-content="Doubleclick to the image to zoom in"
+            data-tooltip-place="top-start"
+            data-tooltip-id="image-tooltip"
           >
             <img
               className={styles.image}
-              src={slide_image_2}
+              src={image}
               alt="slide_image"
               loading="lazy"
+              onDoubleClick={() => handleZoom(image)}
             />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="swiper-zoom-container"
-            style={{ height: containerHeight }}
-            onDoubleClick={handleDoubleClick}
-          >
-            <img
-              className={styles.image}
-              src={slide_image_3}
-              alt="slide_image"
-              loading="lazy"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="swiper-zoom-container"
-            style={{ height: containerHeight }}
-            onDoubleClick={handleDoubleClick}
-          >
-            <img
-              className={styles.image}
-              src={slide_image_4}
-              alt="slide_image"
-              loading="lazy"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="swiper-zoom-container"
-            style={{ height: containerHeight }}
-            onDoubleClick={handleDoubleClick}
-          >
-            <img
-              className={styles.image}
-              src={slide_image_5}
-              alt="slide_image"
-              loading="lazy"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="swiper-zoom-container"
-            style={{ height: containerHeight }}
-            onDoubleClick={handleDoubleClick}
-          >
-            <img
-              className={styles.image}
-              src={slide_image_6}
-              alt="slide_image"
-              loading="lazy"
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="swiper-zoom-container"
-            style={{ height: containerHeight }}
-            onDoubleClick={handleDoubleClick}
-          >
-            <img
-              className={styles.image}
-              src={slide_image_7}
-              alt="slide_image"
-              loading="lazy"
-            />
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
+        {windowWidth > 940 && <Tooltip id="image-tooltip" />}
 
         <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">
