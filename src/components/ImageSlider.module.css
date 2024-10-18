@@ -13,4 +13,5 @@
 
 :global(.swiper-wrapper) {
   padding-top: 8%;
+  padding-bottom: 2%;
 }

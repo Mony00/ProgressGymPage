@@ -56,10 +56,10 @@ function ImageSlider() {
           // setContainerHeight("auto");
           // console.log("slide changed");
         }}
-        onSwiper={() => {
-          // setContainerHeight("auto");
-          console.log("slide changed");
-        }}
+        // onSwiper={() => {
+        //   // setContainerHeight("auto");
+        //   // console.log("slide changed");
+        // }}
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,

@@ -1,0 +1,34 @@
+{
+  "abonamente": [
+    {
+      "abonament": "Abonament Full",
+      "descriere": "Acces nelimitat",
+      "pret": 190
+    },
+    {
+      "abonament": "Abonament Basic",
+      "descriere": "Acces de 3X pe saptamana",
+      "pret": 170
+    },
+    {
+      "abonament": "Abonament Full Studenti/Elevi",
+      "descriere": "Acces nelimitat pentru studenti si elevi",
+      "pret": 150
+    },
+    {
+      "abonament": "Abonament Basic Studenti/Elevi",
+      "descriere": "Acces de 3X pe saptamana pentru studenti si elevi",
+      "pert": 130
+    },
+    {
+      "abonament": "Abonament pe 2 saptamani",
+      "descriere": "Acces nelimitat pe 2 saptamani",
+      "pret": 120
+    },
+    {
+      "abonament": "Abonament cu Antrenor Personal",
+      "descriere": "Acces nelimitat si 3 sedinte cu antrenor personal",
+      "pret": 400
+    }
+  ]
+}

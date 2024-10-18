@@ -10,25 +10,36 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  overflow: hidden;
 }
 
 /* Modal content */
 .modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
-  padding: 20px;
+  padding: 0;
   border-radius: 8px;
   position: relative;
-  max-width: 500px;
-  width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
 }
 
 /* Close button */
 .close-button {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 15px;
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 5vh;
   cursor: pointer;
+  z-index: 10;
+}
+
+.close-button:hover {
+  color: rgb(153, 151, 151);
+  scale: 1.2;
 }
