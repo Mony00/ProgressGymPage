@@ -15,3 +15,17 @@
   padding-top: 8%;
   padding-bottom: 2%;
 }
+
+@media (max-width: 500px) {
+  :global(.swiper-wrapper) {
+    padding-bottom: 10%;
+  }
+
+  :global(.slider-arrow) {
+    display: none;
+  }
+
+  :global(.swiper-container) {
+    width: 90%;
+  }
+}

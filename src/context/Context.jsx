@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const appContext = createContext();
 
@@ -6,6 +7,12 @@ function AppProvider({ children }) {
   const [zoomModal, setZoomModal] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentImage, setCurrentImage] = useState(null);
+
+  //importing/getting the data from the json file
+  async function LoadData() {
+    const { default: data } = await import("../data/abonamente.json");
+    return data;
+  }
 
   function handleZoom(image) {
     setZoomModal(true);
@@ -34,6 +41,7 @@ function AppProvider({ children }) {
         windowWidth,
         currentImage,
         setZoomModal,
+        LoadData,
       }}
     >
       {children}
@@ -41,8 +49,12 @@ function AppProvider({ children }) {
   );
 }
 
-//custom hook
+// proptypes validation
+AppProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
+//custom hook
 function useZoom() {
   const context = useContext(appContext);
   if (context === undefined)

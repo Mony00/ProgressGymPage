@@ -1,12 +1,19 @@
 import StartPage from "./pages/StartPage";
-import DescriptionPage from "./pages/DescriptionPage";
-
+import DescriptionPage from "./components/DescriptionPage";
 import Modal from "./components/Modal";
 import { useZoom } from "./context/Context";
-import Facilities from "./pages/Facilities";
+import Facilities from "./components/Facilities";
+// import ImageSlider from "./components/ImageSlider";
+
+import React from "react";
+import Abonamente from "./components/Abonamente";
 
 function App() {
   const { zoomModal, windowWidth, currentImage } = useZoom();
+
+  // helps when slow internet to reduce the initial loading time
+  const ImageSlider = React.lazy(() => import("./components/ImageSlider"));
+
   const imageStyle = {
     width: "100%",
     maxWidth: "90vw",
@@ -19,6 +26,9 @@ function App() {
     <>
       <StartPage />
       <DescriptionPage />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <ImageSlider />
+      </React.Suspense>
 
       {zoomModal && windowWidth > 940 ? (
         <Modal>
@@ -27,6 +37,7 @@ function App() {
       ) : null}
 
       <Facilities />
+      <Abonamente />
     </>
   );
 }

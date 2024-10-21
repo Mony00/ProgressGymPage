@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./DescriptionPage.module.css";
-import ImageSlider from "../components/ImageSlider";
 
 function DescriptionPage() {
   const [translate, setTranslate] = useState(false);
@@ -19,7 +18,7 @@ function DescriptionPage() {
       <div className={styles.description}>
         <div>
           {translate ? (
-            <p style={{ paddingBottom: "10px" }}>
+            <p className={styles.pharagraphs}>
               <strong>text in Romana </strong> Lorem ipsum, dolor sit amet
               consectetur adipisicing elit. Obcaecati unde similique
               reprehenderit voluptates nostrum excepturi molestias illo
@@ -27,7 +26,7 @@ function DescriptionPage() {
               aspernatur consequuntur atque illo. {link}
             </p>
           ) : (
-            <p style={{ paddingBottom: "10px" }}>
+            <p className={styles.pharagraphs}>
               <strong>Text in Engleza</strong> Lorem ipsum, dolor sit amet
               consectetur adipisicing elit. Neque dolorum quas officiis minus,
               cumque dicta dignissimos fugiat sit omnis cum molestiae eaque
@@ -42,7 +41,6 @@ function DescriptionPage() {
             {translate ? "Translate" : "Back"}
           </button>
         </div>
-        <ImageSlider />
       </div>
     </section>
   );
