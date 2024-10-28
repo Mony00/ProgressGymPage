@@ -17,3 +17,11 @@ body {
   line-height: 1.25;
   background: var(--bgk-color);
 }
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+}

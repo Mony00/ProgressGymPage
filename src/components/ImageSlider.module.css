@@ -16,7 +16,7 @@
   padding-bottom: 2%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   :global(.swiper-wrapper) {
     padding-bottom: 10%;
   }

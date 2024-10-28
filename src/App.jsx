@@ -26,7 +26,9 @@ function App() {
     <>
       <StartPage />
       <DescriptionPage />
-      <React.Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense
+        fallback={<div className="image-slider">Image slider loading...</div>}
+      >
         <ImageSlider />
       </React.Suspense>
 

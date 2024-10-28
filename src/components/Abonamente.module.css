@@ -1,0 +1,59 @@
+.abonamente {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5%;
+  padding-top: 5%;
+}
+
+.abonamente-wrapper {
+  padding: 5%;
+}
+
+.title {
+  padding-left: 5%;
+}
+.abonamente-wrapper h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-weight: 800;
+  line-height: 60px;
+  font-style: normal;
+  font-size: 30px;
+}
+.abonamente-wrapper h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f6b45d; /* Underline color */
+  transform: scaleX(0); /* Start hidden */
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+  animation: slideInOut 6.5s ease-in-out infinite;
+}
+
+@keyframes slideInOut {
+  0%,
+  100% {
+    transform: scaleX(0); /* Hidden at start and end */
+  }
+  50% {
+    transform: scaleX(1); /* Fully visible in the middle */
+  }
+}
+
+@media (max-width: 1500px) {
+  .abonamente {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 5%;
+  }
+}
+
+@media (max-width: 800px) {
+  .abonamente {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

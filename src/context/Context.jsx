@@ -7,12 +7,28 @@ function AppProvider({ children }) {
   const [zoomModal, setZoomModal] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentImage, setCurrentImage] = useState(null);
+  const [abonamente, setAbonamente] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   //importing/getting the data from the json file
-  async function LoadData() {
-    const { default: data } = await import("../data/abonamente.json");
-    return data;
-  }
+  useEffect(
+    function () {
+      setLoading(true); //flag to prevent state on unmounted components
+
+      async function fetchData() {
+        const { default: data } = await import("../data/abonamente.json");
+
+        if (loading) {
+          setAbonamente(data.abonamente);
+        }
+      }
+      fetchData();
+      //cleanup fucntion
+      // console.log(loading);
+      return () => setLoading(false);
+    },
+    [abonamente, loading]
+  );
 
   function handleZoom(image) {
     setZoomModal(true);
@@ -41,7 +57,7 @@ function AppProvider({ children }) {
         windowWidth,
         currentImage,
         setZoomModal,
-        LoadData,
+        abonamente,
       }}
     >
       {children}

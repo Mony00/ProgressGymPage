@@ -1,0 +1,66 @@
+.abonament {
+  border: 0;
+  margin: 10px;
+  min-height: 18vh;
+  margin-inline: auto;
+  max-width: 550px;
+  width: 100%;
+}
+
+.abonament-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(
+    71deg,
+    var(--bgk-color),
+    #312d34,
+    var(--bgk-color)
+  );
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  height: 100%;
+}
+
+.abonament:hover {
+  scale: 1.05;
+}
+
+.border-color {
+  position: relative;
+  /* z-index: 1; */
+}
+
+.border-color::after {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+  background: linear-gradient(71deg, #0d1212, #f6b45d, #0d1212);
+  transition: background 0.4s ease; /* Smooth transition */
+}
+
+.border-color:hover::after {
+  background: linear-gradient(160deg, #0d1212, #f6b45d, #0d1212);
+}
+
+.title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+.description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
