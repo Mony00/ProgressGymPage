@@ -3,10 +3,11 @@ import DescriptionPage from "./components/DescriptionPage";
 import Modal from "./components/Modal";
 import { useZoom } from "./context/Context";
 import Facilities from "./components/Facilities";
-// import ImageSlider from "./components/ImageSlider";
+import Footer from "./components/Footer";
 
 import React from "react";
 import Abonamente from "./components/Abonamente";
+import QASEction from "./components/QASEction";
 
 function App() {
   const { zoomModal, windowWidth, currentImage } = useZoom();
@@ -40,6 +41,8 @@ function App() {
 
       <Facilities />
       <Abonamente />
+      <QASEction />
+      <Footer />
     </>
   );
 }

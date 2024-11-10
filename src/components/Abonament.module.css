@@ -13,7 +13,7 @@
   background: linear-gradient(
     71deg,
     var(--bgk-color),
-    #312d34,
+    var(--lighter-bgk),
     var(--bgk-color)
   );
   background-clip: padding-box;

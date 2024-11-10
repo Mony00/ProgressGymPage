@@ -1,33 +1,39 @@
 {
   "abonamente": [
     {
+      "eng_abonament": "Full Membership",
       "abonament": "Abonament Full",
       "descriere": "Acces nelimitat",
+      "eng_descriere": "Unlimited access",
       "pret": 190
     },
     {
+      "eng_abonament": "Basic Membership",
       "abonament": "Abonament Basic",
       "descriere": "Acces de 3X pe saptamana",
+      "eng_descriere": "3X Week access",
       "pret": 170
     },
     {
+      "eng_abonament": "Full Student Membership",
       "abonament": "Abonament Full Studenti/Elevi",
       "descriere": "Acces nelimitat pentru studenti si elevi",
+      "eng_descriere": "Unlimited access for students",
       "pret": 150
     },
+
     {
-      "abonament": "Abonament Basic Studenti/Elevi",
-      "descriere": "Acces de 3X pe saptamana pentru studenti si elevi",
-      "pert": 130
-    },
-    {
+      "eng_abonament": "2 Weeks Membership",
       "abonament": "Abonament pe 2 saptamani",
       "descriere": "Acces nelimitat pe 2 saptamani",
+      "eng_descriere": "Unlimited access for 2 Weeks",
       "pret": 120
     },
     {
+      "eng_abonament": "Membership with PT",
       "abonament": "Abonament cu Antrenor Personal",
       "descriere": "Acces nelimitat si 3 sedinte cu antrenor personal",
+      "eng_descriere": "Unlimited access and 3X with PT",
       "pret": 400
     }
   ]

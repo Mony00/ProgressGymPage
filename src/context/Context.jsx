@@ -9,6 +9,7 @@ function AppProvider({ children }) {
   const [currentImage, setCurrentImage] = useState(null);
   const [abonamente, setAbonamente] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [translate, setTranslate] = useState(false);
 
   //importing/getting the data from the json file
   useEffect(
@@ -58,6 +59,8 @@ function AppProvider({ children }) {
         currentImage,
         setZoomModal,
         abonamente,
+        translate,
+        setTranslate,
       }}
     >
       {children}

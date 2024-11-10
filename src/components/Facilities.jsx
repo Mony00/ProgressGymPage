@@ -7,62 +7,114 @@ import { GiBiceps } from "react-icons/gi";
 import { GiBoxingGlove } from "react-icons/gi";
 import { FaShower } from "react-icons/fa";
 import { FaInfinity } from "react-icons/fa";
+import { useZoom } from "../context/Context";
 
 function Facilities() {
+  const { translate } = useZoom();
   return (
     <div className={styles.offering}>
       <h1>
-        Beneficiile membrilor <strong>ProgressGym</strong>
+        {" "}
+        {translate ? (
+          <>
+            Beneficiile membrilor <strong>ProgressGym</strong>
+          </>
+        ) : (
+          <>English text</>
+        )}
       </h1>
       <div className={styles.elements}>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <FaHeart />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum.
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}
         </p>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <GiProgression />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum.
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}
         </p>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <IoNutrition />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum.
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}
         </p>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <GiBiceps />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum.
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}
         </p>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <GiBoxingGlove />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum.
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}
         </p>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <FaShower />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum.
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}
         </p>
         <p className={styles["responsive_pharagraph"]}>
           <span>
             <FaInfinity />
           </span>{" "}
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat,
-          illum. <strong className={styles["pop-out-text"]}>Non-Stop</strong>
+          {translate ? (
+            <>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Repellat, illum.
+            </>
+          ) : (
+            <>ENghlis1</>
+          )}{" "}
+          <strong className={styles["pop-out-text"]}>Non-Stop</strong>
         </p>
       </div>
     </div>

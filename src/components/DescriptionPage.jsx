@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useZoom } from "../context/Context";
 import styles from "./DescriptionPage.module.css";
 
 function DescriptionPage() {
-  const [translate, setTranslate] = useState(false);
-
+  const { translate, setTranslate } = useZoom();
   const link = (
     <a
       className={styles.link_style}
@@ -38,7 +37,7 @@ function DescriptionPage() {
             className={styles.btn_translate}
             onClick={() => setTranslate(!translate)}
           >
-            {translate ? "Translate" : "Back"}
+            {translate ? "Translate to English" : "Back to Romanian"}
           </button>
         </div>
       </div>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "intrebare": "Intrebare1?",
+    "eng_intrebare": "Questions1",
+    "raspuns": "Raspuns1",
+    "eng_raspuns": "Answer1"
+  },
+  {
+    "id": 2,
+    "intrebare": "Intrebare2?",
+    "eng_intrebare": "Questions2",
+    "raspuns": "Raspuns2",
+    "eng_raspuns": "Answer2"
+  },
+  {
+    "id": 3,
+    "intrebare": "Intrebare3?",
+    "eng_intrebare": "Questions3",
+    "raspuns": "Raspuns3",
+    "eng_raspuns": "Answer3"
+  },
+  {
+    "id": 4,
+    "intrebare": "Intrebare4?",
+    "eng_intrebare": "Questions4",
+    "raspuns": "Raspuns4",
+    "eng_raspuns": "Answer4"
+  }
+]
