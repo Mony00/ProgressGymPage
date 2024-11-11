@@ -26,3 +26,12 @@ body {
   display: flex;
   justify-content: center;
 }
+
+/* Ensures the image fits within the div without being cropped */
+.imageStyle {
+  width: 100%;
+  max-width: 90vw;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+}

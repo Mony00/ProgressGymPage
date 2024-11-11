@@ -4,24 +4,17 @@ import Modal from "./components/Modal";
 import { useZoom } from "./context/Context";
 import Facilities from "./components/Facilities";
 import Footer from "./components/Footer";
-
-import React from "react";
 import Abonamente from "./components/Abonamente";
 import QASEction from "./components/QASEction";
+import ImageSlider from "./components/ImageSlider";
+
+import React from "react";
 
 function App() {
   const { zoomModal, windowWidth, currentImage } = useZoom();
 
   // helps when slow internet to reduce the initial loading time
-  const ImageSlider = React.lazy(() => import("./components/ImageSlider"));
-
-  const imageStyle = {
-    width: "100%",
-    maxWidth: "90vw",
-    height: "auto",
-    maxHeight: "90vh",
-    objectFit: "contain", // Ensures the image fits within the div without being cropped
-  };
+  // const ImageSlider = React.lazy(() => import("./components/ImageSlider"));
 
   return (
     <>
@@ -35,7 +28,7 @@ function App() {
 
       {zoomModal && windowWidth > 940 ? (
         <Modal>
-          <img src={currentImage} alt="zoom-image" style={imageStyle} />
+          <img src={currentImage} alt="zoom-image" className="imageStyle" />
         </Modal>
       ) : null}
 
